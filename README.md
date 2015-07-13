@@ -9,8 +9,10 @@ El proyecto esta basado en una instalación limpia de Drupal, sin embargo se han
 * Overlay (Displays the Drupal administration interface in an overlay).
 * Toolbar (Provides a toolbar that shows the top-level administration menu items and links from other modules).
 
-## Tema Contribuido
-Como tema administrativo se ha instalado el Ember (https://www.drupal.org/project/ember).
+## Temas Contribuidos
+Se han instalado los siguientes temas: 
+* Omega (https://www.drupal.org/project/omega) como tema base, dicho tema incluye el subtema de demostración Ohm y se esta utilizando como predeterminado.
+* Ember (https://www.drupal.org/project/ember) para tema administrativo.
 
 ## Modulos Contribuidos
 En el proyecto se implementarón una serie de modulos contribuidos los cuales se listan a continuación:
