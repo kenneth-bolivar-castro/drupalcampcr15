@@ -1,21 +1,26 @@
 # Custom Blocks and Panels Version of Blocks (Ctools) - Drupal 7
 
-En este repositorio tendras acceso al código fuente del proyecto en Drupal 7 en su totalidad y además el respaldo completo de la base de datos utilizado en la charla del **Drupal Camp Costa Rica 2015**.
+This repository has the full project, source code and backup database, for a session of **Drupal Camp Costa Rica 2015**.
 
 http://www.drupalcamp.cr/en/session/custom-blocks-and-panels-version-blocks-ctools-drupal-7
 
-## Configuración inicial
-El proyecto esta basado en una instalación limpia de Drupal, sin embargo se han hecho una serie de configuraciones para preparar el ambiente de trabajo. Se han desabilidado los siguiente modulos del núcleo:
+## Admin credentials
+This Drupal site has only the admin account, here goes the credentials:
+Username: **admin**
+Password: **admin**
+
+## Initial settings
+This project is a clear Drupal installation from scracth, however It has a couple of changes on settings to prepare our local environment. The following core modules was disabled:
 * Overlay (Displays the Drupal administration interface in an overlay).
 * Toolbar (Provides a toolbar that shows the top-level administration menu items and links from other modules).
 
-## Temas Contribuidos
-Se han instalado los siguientes temas: 
-* Omega (https://www.drupal.org/project/omega) como tema base, dicho tema incluye el subtema de demostración Ohm y se esta utilizando como predeterminado.
-* Ember (https://www.drupal.org/project/ember) para tema administrativo.
+## Contributed Themes
+This project has installed two contributed module, one used for admin pages also a theme implemented across site, the following themes was installed:
+* Omega (https://www.drupal.org/project/omega) like base theme, however we enabled as default theme the subtheme called Ohm.
+* Ember (https://www.drupal.org/project/ember) like admin theme.
 
-## Modulos Contribuidos
-En el proyecto se implementarón una serie de modulos contribuidos los cuales se listan a continuación:
+## Contributed modules
+This project has implemented a bunch of contributed modules, I listed above:
 * Module filter (https://www.drupal.org/project/module_filter).
 * Navbar (https://www.drupal.org/project/navbar).
 * Libraries (https://www.drupal.org/project/libraries)
@@ -23,14 +28,16 @@ En el proyecto se implementarón una serie de modulos contribuidos los cuales se
 * Panels (https://www.drupal.org/project/panels).
 * Chaos tools (https://www.drupal.org/project/ctools)
 
-## Modulos Personalizados
-Unicamente se ha generado un modulo personalizado donde se encuentra la implementación del bloque personalizado y la definción del Content Type para paneles utilizando CTools.
+## Custom module
+There is only one custom moudle where the custom block implementation lives, also the puglin for panels called content type based on CTools.
 
-## Respaldo de dase de datos
-El archivo llamado database.sql contiene el respaldo completo de la base de datos utilizada.
+## Full back-up database
+The file named database.sql, it is a full back-up from database used on this project.
 
-Espero que sea de mucha ayuda y si tiene alguna duda no dude en contactarme:
+I hope, it makes a lot of sense, however feel free to ping me and ask me whatever you think necessary:
 
 * Mail: keboca@gmail.com
+* SkypeID: keboca
 * Twitter: https://twitter.com/keboca
 * LinkedIn: https://www.linkedin.com/in/kennethbolivarcastro
+
