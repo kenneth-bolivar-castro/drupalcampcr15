@@ -40,10 +40,68 @@ function drupalcampcr_block_view($delta = '') {
       // Define block content.
       $block['subject'] = t('Last login');
       $block['content'] = array(
-        '#markup' => date(DateTime::ATOM, $user->login),
+        '#theme' => 'drupalcampcr_last_login',
+        '#account' => $user,
       );
       break;
   }
 
   return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function drupalcampcr_theme() {
+  return array(
+    'drupalcampcr_last_login' => array(
+      'variables' => array(
+        'account' => NULL,
+        'message' => NULL,
+      ),
+    ),
+  );
+}
+
+/**
+ * Callback theme function to format last login.
+ */
+function theme_drupalcampcr_last_login($variables) {
+
+  // Retrieve account given by parameter, otherwise
+  // load current user by helper function.
+  $account = (!empty($variables['account'])) ?
+      $variables['account'] : user_uid_optional_load();
+
+  // Retrieve message variable.
+  $message = (!empty($variables['message'])) ?
+      $variables['message'] : NULL;
+
+  // Define last logged in date "format_date"
+  // by default retrieve current user timezone.
+  $date_login = format_date($account->login);
+  $output['wrapper'] = array(
+    '#type' => 'fieldset',
+    '#title' => ' ',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#attributes' => array(
+      'class' => array(
+        'drupalcampcr-wrapper-block-account-logged',
+      ),
+    ),
+  );
+  $output['wrapper']['info'] = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'div',
+    '#value' => "You last logged in at {$date_login}. {$message}",
+    '#attributes' => array(
+      'class' => array(
+        'drupalcampcr-block-account-login',
+      ),
+    ),
+    '#value_prefix' => '<strong>',
+    '#value_suffix' => '</strong>',
+  );
+  return render($output);
 }
