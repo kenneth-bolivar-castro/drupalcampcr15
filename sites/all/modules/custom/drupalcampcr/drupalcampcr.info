@@ -1,0 +1,7 @@
+name = Drupal Camp Costa Rica
+description = Provides custom implementation blocks and Ctools plugins.
+package = DrupalCampCR
+core = 7.x
+
+; Includes 
+files[] = drupalcampcr.module
