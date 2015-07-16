@@ -44,7 +44,7 @@ function info_login_content_type_admin_info($subtype, $conf, $contexts) {
         $conf['override_title_text'] : 'Displays a last logged in date.';
     $custom_message = (!empty($conf['logged_message'])) ?
         ' and custom message ("@logged_message")' : '';
-    $block->content = t("It will show: data of last logged in{$custom_message}.", array(
+    $block->content = t("It will show: data of last logged in {$custom_message}.", array(
       '@logged_message' => $conf['logged_message'],
     ));
     return $block;
@@ -57,6 +57,6 @@ function info_login_content_type_admin_info($subtype, $conf, $contexts) {
 function info_login_content_type_render($subtype, $conf, $args, $context) {
   $block = new stdClass();
   $block->suject = t('Last logged');
-  $block->content = theme('techs_users_last_logged_in', array('message' => $conf['logged_message']));
+  $block->content = theme('drupalcampcr_last_login', array('message' => $conf['logged_message']));
   return $block;
 }
