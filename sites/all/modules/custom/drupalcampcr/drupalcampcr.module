@@ -4,3 +4,46 @@
  * @file
  * Provides custom implementation blocks and Ctools plugins.
  */
+
+/**
+ * Implements hook_block_info().
+ */
+function drupalcampcr_block_info() {
+
+  // Definition of custom block.
+  $blocks['drupalcampcr_last_login'] = array(
+    'info' => t('Users last login'),
+    'cache' => DRUPAL_CACHE_PER_USER,
+    'status' => TRUE,
+    'region' => 'highlighted',
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function drupalcampcr_block_view($delta = '') {
+
+  $block = array();
+  switch ($delta) {
+    // Check current delta block.
+    case 'drupalcampcr_last_login':
+      // Skip if user is anonymous.
+      if (user_is_anonymous()) {
+        break;
+      }
+
+      // Load current user.
+      global $user;
+
+      // Define block content.
+      $block['subject'] = t('Last login');
+      $block['content'] = array(
+        '#markup' => date(DateTime::ATOM, $user->login),
+      );
+      break;
+  }
+
+  return $block;
+}
