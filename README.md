@@ -27,7 +27,7 @@ This project has a bunch of contributed modules implemented, below is a list of 
 * Devel (https://www.drupal.org/project/devel).
 * Panels (https://www.drupal.org/project/panels).
 * Chaos tools (https://www.drupal.org/project/ctools)
-* Page manager (https://www.drupal.org/project/page_manager)
+* Page manager (Module under CTools)
 
 ## Custom module
 There is only one custom module where the custom block implementation lives, also the puglin for panels called content type, based on CTools.
